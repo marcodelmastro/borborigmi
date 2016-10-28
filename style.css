@@ -1,0 +1,662 @@
+/*
+Theme Name: Borborigmi
+Theme URI: http://www.borborigmi.org
+Description: Borborigmi di un fisico renitente
+Author: Marco Delmastro
+Author URI: http://www.borborigmi.org
+Template: thematic
+Version: 1.2
+*/
+
+/* Reset browser defaults */
+@import url('../thematic/library/styles/reset.css');
+
+/* Apply basic typography styles */
+@import url('../thematic/library/styles/typography.css');
+
+/* Apply 3 columns layout layout */
+@import url('./3c-r-fixed-custom.css');
+
+/* Apply basic image styles */
+@import url('../thematic/library/styles/images.css');
+
+/* Apply default theme styles and colors */
+@import url('../thematic/library/styles/default.css');
+
+/* Prepare theme for plugins */
+@import url('../thematic/library/styles/plugins.css');
+
+/* color schemes */
+
+/* 
+
+GREYS (texts and top menu)
+
+White        | #FFFFFF | 
+Black        | #000000 | link hover in text
+Dark grey    | #333333 | body text   
+Mid grey     | #666666 | Menu text
+Light grey   | #999999 | meta text
+Lighter grey | #EEEEEE | menu background
+Nicer grey   | #E0E5E1 | :-)
+
+BLUE/VIOLET (from Regolus)
+
+Light Violet | #EEEEFF | blockquote background (?), author comment background
+Violet       | #6688FF | link, link hover, h1 hover, h3 sidebar, footer border
+Deep blue    | #002244 | footer background, link hover in text
+
+SHADES OF ORANGE
+
+#f8f7ef | beige          | blockquote background, author comment background
+#f49300 | Medium orange  | h1 hover, h3 sidebar, footer border
+#FA590D | darker orange  | link in entry, link hover in asides
+
+*/
+
+/* FONTS */
+
+@font-face {
+    font-family: 'FFFTusjBold';
+    src: url('fonts/FFF-Tusj-fontfacekit/FFF_Tusj-webfont.eot');
+    src: url('fonts/FFF-Tusj-fontfacekit/FFF_Tusj-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/FFF-Tusj-fontfacekit/FFF_Tusj-webfont.woff') format('woff'),
+         url('fonts/FFF-Tusj-fontfacekit/FFF_Tusj-webfont.ttf') format('truetype'),
+         url('fonts/FFF-Tusj-fontfacekit/FFF_Tusj-webfont.svg#FFFTusjBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MiserablyLoseRegular';
+    src: url('fonts/Miserably-Lose/miserablylose-webfont.eot');
+    src: url('fonts/Miserably-Lose/miserablylose-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Miserably-Lose/miserablylose-webfont.woff') format('woff'),
+         url('fonts/Miserably-Lose/miserablylose-webfont.ttf') format('truetype'),
+         url('fonts/Miserably-Lose/miserablylose-webfont.svg#MiserablyLoseRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+/* re-define base font-face and size */
+body, input, textarea {    
+    font-size:16px;    
+    color: #333333;
+}
+
+/* top menu over grey background */
+#access {
+    font-family: 'Trebuchet MS', 'Helvetica Neue', Arial, Sans-Serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: #666666; 
+    background: #f8f7ef;
+    text-transform: uppercase;
+    padding: 3px 0 0 0;
+    width: 100%;
+    border-bottom: none;
+}
+#menu {
+    border: none;
+}
+.sf-menu {
+    border-right: none;
+    padding: 2px 0px 0px 0px;
+}
+.sf-menu a, 
+.sf-menu a:hover,
+.sf-menu a:visited { /* visited pseudo selector so IE6 applies text colour */
+    background: #f8f7ef;
+    color: #666666;
+    border: none;
+    border-top:
+    text-decoration:none;
+}
+.sf-menu li a {
+    color: #666666;
+}
+.sf-menu a:hover {
+    color: #000000;
+}
+.sf-menu li.current_page_item {
+    color:#f49300;
+    background: transparent url(images/tab_right_white_beige.png) no-repeat right 0px;
+}
+.sf-menu li.current_page_item a {
+    color:#f49300;
+    background: transparent url(images/tab_left_white_beige.png) no-repeat;
+}
+
+/* sottodropdown menu */
+.sf-menu ul a {
+    color: #666666 !important; /* protect from conditional formatting of top page, if any */
+    background: #f8f7ef !important;
+}
+.sf-menu ul a:hover {
+    color:#f49300 !important;
+    background: #f8f7ef !important;
+}
+
+/* conditional formatting for special page (menu item with new WP 3.0 menu) */
+.sf-menu #menu-item-8015 {
+    color: #ffffff;
+    background: transparent url(images/tab_right_orange_beige.png) no-repeat right 0px;
+}
+.sf-menu #menu-item-8015 a {
+    color: #ffffff;
+    background: transparent url(images/tab_left_orange_beige.png) no-repeat;
+}
+.sf-menu #menu-item-8015 a:hover {
+    color:#003300;
+}
+.sf-menu #menu-item-8015.current_page_item {
+    color:#f49300;
+    background: transparent url(images/tab_right_white_beige.png) no-repeat right 0px;
+}
+.sf-menu #menu-item-8015.current_page_item a {
+    color:#f49300;
+    background: transparent url(images/tab_left_white_beige.png) no-repeat;
+}
+
+
+
+/* blog title */
+#branding{
+    padding: 10px 0 0 0;
+}
+#blog-title a {
+    display: block;
+    overflow: hidden;
+    text-indent:-9000px;
+    height: 200px;
+    background: url(images/header_colors.png) no-repeat 0 0;
+    /* padding: 0 0 0 0; */
+    line-height: 0pt;
+    border: none;
+}
+#blog-description {
+    position:absolute;
+    left: -9000px;
+    padding: 0 0 0 0;
+}
+
+/* main */
+#main{
+    padding: 15px 0 0 0;
+}
+
+
+/* links */
+a:link, a:visited { 
+    text-decoration: none;
+    color: #DD6D0B;
+}
+a:hover {
+    border-bottom: 1px dotted #000000;
+    color: #000000;
+    background: #f8f7ef;
+}
+a.more-link {
+    border-bottom: 1px dotted #666666;	
+    padding-bottom: 2px;
+    font-weight: bold;	
+}
+a:hover.more-link {
+    text-decoration: none;
+}
+a img {
+    border:none;        
+}
+a:hover.img {
+    border-bottom:none;	
+}
+.aligncenter a:hover{
+    border: none;
+}
+.gallery-icon a:hover{
+    border: none;
+}
+.alignleft,
+img.alignleft { 
+    border: 1px solid #ccc;
+    margin:0 8px 8px 0;
+    padding: 6px;
+}
+/* Latex inline formulas */
+img.tex {
+    vertical-align: text-bottom;
+    margin: 0;
+    padding: 0;
+}
+img.latex {
+    vertical-align: text-bottom;
+    margin: 0;
+    padding: 0;
+}
+
+strong, b {
+	font-weight:bold;
+}
+
+em, i {
+	font-style:italic;
+}
+
+/* entry */
+.entry-title {
+    font-family:"ff-scala-sans-web-1","ff-scala-sans-web-2","Lucida Grande",Geneva,Helvetica,sans-serif;
+    font-size:22px;
+    font-weight:bold;
+    line-height:150%;
+    padding:0 0 5px 0;
+    color: #000000;
+    text-decoration:none;
+    border-bottom: 1px dashed #999999;
+}
+.entry-title a {
+    color: #000000;
+    text-decoration:none;
+}
+.entry-title a:hover {
+    color: #f49300;
+    background: #ffffff;
+    text-decoration:none;
+    border-bottom:none;
+}
+.entry-meta{
+    padding:5px 0 0 0;
+    color:#999999;
+}
+.entry-meta a:hover {
+    text-decoration:none;
+    color: #000000;
+}
+.entry-content{
+    text-align: justify;
+}
+.entry-utility {
+    background: #f8f7ef;
+    color: #222222;
+    padding:5px 5px 5px 5px;
+    border-top: 1px dashed #999999;
+    border-bottom: 1px dashed #999999;
+}
+.entry-utility a {
+    color: #FA590D;
+}
+.entry-utility a:hover{
+    color: #000000;
+}
+
+/* blockquote */
+#content blockquote {
+    margin:0 0 15px 0;
+    font-size:95%;
+    line-height:1.5em;
+    padding:18px 26px 10px 48px; 
+    background: #f8f7ef url(images/quote_geogia_white_italic.png) no-repeat 12px 12px;
+    border-left: 4px solid #f49300;
+    color: #222222;
+}
+blockquote em {
+    font-style:italic;
+}
+
+/* navigation */
+.navigation {
+    padding:5px;
+}
+.navigation a:hover{
+    color: #000000;
+}
+#nav-above, #nav-below {
+    width:auto;
+}
+#nav-above {
+    margin-bottom:24px;
+}
+#nav-below {
+    margin-top:24px;
+}
+.paged #nav-above {
+    padding:18px; /* to reset the default */
+}
+
+/* comments */
+#comments h3 {
+    font-family:"ff-scala-sans-web-1","ff-scala-sans-web-2","Lucida Grande",Geneva,Helvetica,sans-serif;
+    font-size:15px;
+    font-weight:bold;
+    line-height:22px;
+    padding:0 0 18px 0;
+    color: #333333;
+}
+#comments-list {
+    border: none;
+    margin:0 0 0 0;
+}
+#comments-list ol {
+    border: none;
+}
+#comments-list li {
+    border:1px solid #EEE;
+    margin-bottom: 12px;
+}
+#comments-list li, #comments-list li.alt  {
+    background-color:#F8F8F8;
+}
+#comments-list .comment {
+    border-bottom: 1px solid #EEE;
+    padding:18px 1.5em 0 1.5em;
+    position:relative;
+}
+#comments-list li .avatar {
+    padding: 3px;
+    border: 1px solid #999999;
+    background: #FFFFFF;
+}
+#comments-list .comment-meta {
+    border-bottom:1px solid #E0E0E0;
+    padding:0 0 9px 50px;
+    margin-bottom:18px;
+}
+#comments-list .comment-author {
+    font-family:"ff-scala-sans-web-1","ff-scala-sans-web-2","Lucida Grande",Geneva,Helvetica,sans-serif;
+    padding: 9px 0 0 50px;
+}
+#comments-list li.byuser {
+    border:1px dashed #999999;
+    background:#f8f7ef;
+}
+#comments-list li.byuser .comment-meta {
+    border-bottom:1px solid #AAA;
+}
+#comments-list li.bypostauthor {
+    border:1px dashed #999999;
+    background:#f8f7ef;
+}
+#comments-list li.bypostauthor .comment-meta {
+    border-bottom:1px solid #AAA;
+}
+.comment-reply-link a:hover {
+    border: none;
+    decoration: none;
+    color: #000000;
+    background: #F8F8F8;
+}
+#comments-list #respond {
+    border-bottom:1px solid #999999;
+    margin:0 0 18px 0;
+    padding:18px 1.5em;
+}
+#comments-list ul #respond {
+    border:1px solid #999999;
+    margin:0;
+}
+.comment-navigation a {
+    border:none;
+}
+
+/* category Archive title */
+.page-title {
+    font-size:30px;
+    line-height:36px;
+    padding:5px 0 5px 0;
+    margin:0 0 40px 0;
+    text-align: center;
+}
+.page-title span {
+    font-size:30px;
+    font-style:italic;
+    color: #f49300;
+}
+/*
+h1.page-title span,
+h1.page-title {
+    vertical-align: middle;
+}
+*/
+
+/* widgets sidebars */
+.main-aside h3.widgettitle {    
+    font-family:"ff-scala-sans-web-1","ff-scala-sans-web-2","Lucida Grande",Geneva,Helvetica,sans-serif;
+    font-size:15px;
+    font-weight:bold;
+    line-height:17px;
+    font-style:normal; 
+    color: #f49300;
+    padding-bottom:10px;   
+}
+#container {
+    border-right: 1px dashed #999999;
+}
+#primary {
+    border: none;
+}
+#secondary {
+}
+.main-aside {
+    font-family:"ff-scala-sans-web-1","ff-scala-sans-web-2","Lucida Grande",Geneva,Helvetica,sans-serif;
+    font-size:12px;
+}
+.main-aside a{
+    text-decoration:none;
+}
+.main-aside a:active, .main-aside a:hover {
+    color:#FA590D;
+    border: none;
+}
+#primary a {
+    color:#888;
+}
+#secondary a {
+    color:#888;
+}
+#primary a:active, #primary a:hover{
+    color:#f49300;
+    background:#ffffff;
+    border:none;
+}
+#secondary a:active, #secondary a:hover{
+    color:#f49300;
+    background:#ffffff;
+    border:none;
+}
+#primary .widgetcontainer ul li {
+    /*     list-style-image: url(images/bullet.png); */
+    color: #666666;
+}
+#secondary .widgetcontainer ul li {
+    /*     list-style-image: url(images/bullet.png); */
+    color: #666666;
+}
+.aside input {
+    width: 100%;
+}
+.aside #s {
+    font-family:"ff-scala-sans-web-1","ff-scala-sans-web-2","Lucida Grande",Geneva,Helvetica,sans-serif;
+    font-size:10px;
+}
+
+/* footer */
+#footer {
+    display:block;
+    padding:1em 0 4em 8px;
+    border-top: 2px solid #f49300;
+    color:#fff;
+    clear:both;
+    background:#000000;
+    list-style-type:none;
+    _height:1%;
+}
+
+#footer .aside h3 {
+    font-family:"ff-scala-sans-web-1","ff-scala-sans-web-2","Lucida Grande",Geneva,Helvetica,sans-serif;
+    font-size:15px;
+    font-weight:bold;
+    line-height:100%;
+    font-style:normal; 
+    color: #f49300;
+    /* margin-bottom:12px; */
+    padding-bottom:12px;
+}
+
+#footer .aside {
+    font-family:"ff-scala-sans-web-1","ff-scala-sans-web-2","Lucida Grande",Geneva,Helvetica,sans-serif;
+    font-size:12px;
+    color: #ffffff;
+}
+#footer .aside a{
+    text-decoration: none;
+    color: #ffffff;
+    border-bottom: 1px dotted #999999;
+}
+#footer .aside a:active, 
+#footer .aside a:hover {
+    color: #FA590D;
+    background: #000000;
+    border: none;
+}
+#footer #siteinfo a {
+    display: block;
+    overflow: hidden;
+    text-indent:-9000px;
+    height: 200px;
+    background:transparent url(images/oliver-footer.png) no-repeat scroll right bottom;
+    line-height: 0pt;
+    border: none;
+}
+
+.democracy {
+    max-width: 500px;
+}
+
+#footer #social-widget-3 a {
+    text-decoration: none;
+    border-bottom: none;
+}
+
+/* instagram widget */
+#secondary .widget_instagrm_widget ul li {
+    list-style-type: none;
+}
+#instagram_widget_title {
+    font-family:"ff-scala-sans-web-1","ff-scala-sans-web-2","Lucida Grande",Geneva,Helvetica,sans-serif;
+    font-size:15px;
+    font-weight:bold;
+    line-height:17px;
+    font-style:normal; 
+    color: #f49300;
+    padding-bottom:10px;
+}
+
+
+/* navigation menu */
+.nav {
+    text-align: left;
+    margin: 0 0 0 0;
+    padding: 0 0 10px 0;
+}
+.nav ul {
+    list-style-type: none; 
+    list-style-image: none; 
+}
+.nav li {
+    display: inline; 
+    background: black;
+    color: #f49300;
+    font-family:"ff-scala-sans-web-1","ff-scala-sans-web-2","Lucida Grande",Geneva,Helvetica,sans-serif;
+    font-size:15px;
+    padding: 5px 20px 5px 20px; 
+    line-height: 31px;
+}
+.nav li a:hover {    
+    color: white;
+    background: black;
+    decoration: none;
+}
+
+
+/* Special styles for book marketing */
+
+/* POPUP */
+.button {	
+    display:block;	
+    width:250px;	
+    height:50px;	
+    text-indent:-9999px;        
+    /* margin-left: 200px; */ /* if only one button in center */             
+    margin-left: 50px;          
+    margin-bottom: 50px; 
+}
+.button a {	
+    display:block;	
+    width:100%;	height:100%;	
+    background:url(http://www.borborigmi.org/images/particellefamiliari/Bottone-Libro-Scopri.png) no-repeat top left;	
+    outline:none;
+}
+.button a:hover {	
+    background-position:0 -50px;
+    border-bottom: none !important;
+}
+.button2 {	
+    display:block;	
+    width:250px;	
+    height:50px;	
+    text-indent:-9999px;        
+    margin-left: 350px;        
+    margin-top: -100px;
+}
+.button2 a {
+    display:block;	
+    width:100%;	
+    height:100%;	
+    background:url(http://www.borborigmi.org/images/particellefamiliari/Bottone-Libro-Acquista.png) no-repeat top left;
+    outline:none;
+}
+.button2 a:hover {
+    background-position:0 -50px;
+    border-bottom: none !important;
+}>
+
+/* BOOK PAGE */
+.bookalignleft,
+img.bookalignleft{
+    float: left;
+    border: none;
+    margin: 0 10px 10px 0;
+    padding: 10px;    
+}
+.booktitle {
+    font-family: 'Trebuchet MS', 'Helvetica Neue', Arial, Sans-Serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #f49300; 
+    margin-top: 5px;
+    display: inline-block;
+}
+.booksubtitle {
+    font-family: 'Trebuchet MS', 'Helvetica Neue', Arial, Sans-Serif;
+    font-size: 15px;
+    font-weight: bold;
+    color: #f49300; 
+    margin-top: 8px;
+    display: inline-block;
+}
+.bookdescription {
+    font-family: 'Trebuchet MS', 'Helvetica Neue', Arial, Sans-Serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #666666; 
+}
+
+
+/* div stats table container */
+.table-stats-responsive {width: 98%; padding-left: 10px;}
+/* table stats border style */
+.table-stats-responsive table {border: #ccc solid 1px;}
+/* th and td */
+.table-stats-responsive table td, .table-stats-responsive table th {min-width: 50px; width: 16.5%; border: #ccc solid 1px; word-break: break-all; text-align: center; padding: 1%;}
